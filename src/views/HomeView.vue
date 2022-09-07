@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="container">
-          <h1 class="display-2">Gliss</h1>
+          <h1 class="display-2">Gliss Beauty</h1>
           <h2 class="display-5">Taking care of all of your needs</h2>
     </div>
   </div>
@@ -16,7 +16,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
 
 

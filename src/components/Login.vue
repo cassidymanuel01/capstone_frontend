@@ -54,12 +54,13 @@
           </div>
           <div class="modal-footer">
             <button
-                  class="btn btn-primary border border-0"
+                  class="btn"
                   type="button"
                   @click="login()"
                 >
                   Login
                 </button>
+                <button class="btn" @click="logout">logout</button>
           </div>
         </div>
       </div>
@@ -76,15 +77,42 @@ export default {
     };
   },
   methods: {
+    logout(){
+   this.$store.commit("Logout");
+   console.log("see ya later")
+    },
     login() {
       const user = {
-        email: this.email,
-        password: this.password,
-      };
-      this.$store.dispatch("login", user);
-    },
+          email: this.email,
+          password: this.password,
+        }
+        this.$store.dispatch("login", user) 
+    }
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+
+.modal-content{
+  background-color: #c37935;
+  color: white;
+}
+
+.btn{
+  background-color: #c37935;
+  color: white;
+  font-weight: 900;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  background-color: white ;
+  color: #c37935;
+  font-weight: 900;
+  border: 1px solid #c37935;
+  border-radius: 10px;
+}
+
+</style>

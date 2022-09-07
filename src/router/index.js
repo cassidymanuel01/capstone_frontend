@@ -20,20 +20,25 @@ const routes = [
     component: () => import( '../views/AllBookings.vue')
   },
   {
-    path: '/singleBooking',
+    path: '/singleBooking/:id',
     name: 'singleBooking',
-    component: () => import('../views/SingleBooking.vue')
+    component: () => import('../views/SingleBooking.vue'),
+    props: true
   },
   {
     path: '/contact',
     name: 'contact',
     component: () => import('../views/Contact.vue')
   },
-  ,
   {
     path: '/login',
     name: 'login',
     component: () => import('../components/Login.vue')
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/Admin.vue')
   }
 ]
 
