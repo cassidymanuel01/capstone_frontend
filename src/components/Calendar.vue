@@ -200,7 +200,6 @@ td {
 
 .calendar-container {
 	position: relative;
-	width: 350px;
 }
 
 .calendar-container header {
@@ -229,7 +228,7 @@ td {
 	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px white;
 	color: #c37935;
 	display: inline-block;
-	padding: 2em;
+	padding: 10px;
 }
 
 .calendar thead {
@@ -244,7 +243,7 @@ td {
 }
 
 .calendar tbody td:hover {
-	background: white;
+	background: #c37935;
 	color: white;
 }
 

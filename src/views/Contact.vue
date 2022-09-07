@@ -5,7 +5,7 @@
             <div class="overlay">
                 <div class="container">
                     <h2>contact us</h2>
-                    <p class="h2-bottom">We value all our customers so just fucking contact us.</p>
+                    <p class="h2-bottom">We value all our customers so just contact us.</p>
                     <div class="social">
                         <i class="fa fa-facebook"></i>
                         <i class="fa fa-twitter"></i>

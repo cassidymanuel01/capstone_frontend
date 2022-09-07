@@ -57,8 +57,8 @@ export default createStore({
       context.commit('setUsers', res.users)
     },
 
-    async getBooking(context, id){
-      let fetched = await fetch('https://capstone-backend-api-1.herokuapp.com/bookings/' + id);
+    async getBooking(context, payload){
+      let fetched = await fetch('https://capstone-backend-api-1.herokuapp.com/bookings/' + payload);
       let res = await fetched.json();
       context.commit('setBooking', res.bookings)
     },
@@ -153,7 +153,7 @@ export default createStore({
             context.commit('setToken', data.token)
             console.log(data.token);
             console.log(data.user)
-            context.dispatch('getUserCart')
+            // context.dispatch('getUserCart')
            }
           }
         });

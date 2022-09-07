@@ -53,9 +53,8 @@ import Calendar from '@/components/Calendar.vue';
 
 export default {
   components:{Calendar},
-    props: ["id"],
     mounted() {
-        this.$store.dispatch("getBooking", this.id);
+        this.$store.dispatch("getBooking", this.$route.params.id);
     },
     computed: {
         booking() {
