@@ -17,33 +17,31 @@
         <router-link to="/" id="Logo">Gliss Beauty</router-link>
       </div>
 
-      <div id="Navbar-right" class="fw-light gap-2">
+      <div id="Navbar-right" class="fw-light gap-3">
         <router-link
           to="/"
           id="loginlink"
           data-bs-toggle="modal"
           data-bs-target="#staticBackDrop"
-        >
-          login
+        ><i class="bi bi-person" title="Login"></i>
         </router-link>
         <router-link
           to="/"
           id="registerlink"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
-        >
-          Register
+        ><i class="bi bi-person-fill" title="Register"></i>
         </router-link>
         <div v-if="user">
-          <router-link to="/allBookings" id="loginlink">Treatments</router-link>
+          <router-link to="/allBookings" id="loginlink"><i class="bi bi-bag" title="Treatments"></i></router-link>
         </div>
         <div v-if="user">
-          <router-link to="/admin" id="loginlink">
-            <i class="bi bi-book"></i>
+          <router-link v-if="user[0].userRole == 'admin'" to="/admin" id="loginlink">
+            <i class="bi bi-book" title="Admin"></i>
           </router-link>
         </div>
         <router-link to="/contact" id="loginlink"
-          ><i class="bi bi-telephone"></i
+          ><i class="bi bi-telephone" title="Contact"></i
         ></router-link>
       </div>
     </div>
@@ -123,4 +121,39 @@ i {
   text-decoration: none !important;
   color: white;
 }
+
+.bi-person:hover{
+  background-color: white ;
+  color: #c37935;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.bi-person-fill:hover{
+  background-color: white ;
+  color: #c37935;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.bi-book:hover{
+  background-color: white ;
+  color: #c37935;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.bi-bag:hover{
+  background-color: white ;
+  color: #c37935;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.bi-telephone:hover{
+  background-color: white ;
+  color: #c37935;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
 </style>

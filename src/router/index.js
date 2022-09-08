@@ -22,8 +22,7 @@ const routes = [
   {
     path: '/singleBooking/:id',
     name: 'singleBooking',
-    component: () => import('../views/SingleBooking.vue'),
-    props: true
+    component: () => import('../views/SingleBooking.vue')
   },
   {
     path: '/contact',

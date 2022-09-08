@@ -1,10 +1,10 @@
 <template>
-  <div class="modal fade" :id="`deleteUser`+users.id" tabindex="-1" :aria-labelledby="users.id+`DeleteLabel`" aria-hidden="true">
+  <div class="modal fade" :id="`deleteUser`+user.id" tabindex="-1" :aria-labelledby="user.id+`DeleteLabel`" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" :id="`deleteUserLabel`+users.id">Delete user</h5>
-                    <button type="button" :id="`deleteUserClose`+users.id" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" :id="`deleteUserLabel`+user.id">Delete user</h5>
+                    <button type="button" :id="`deleteUserClose`+user.id" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <h3>Are you sure you want to delete this user</h3>
@@ -18,12 +18,12 @@
 
 <script>
 export default {
-    props:['users'],
+    props:['user'],
     methods:{
         deleteUser(){
-            this.$store.dispatch('deleteUser',this.users.id);
-            console.log(this.users.id)
-            document.getElementById(`deleteUserClose`+this.users.id).click();
+            this.$store.dispatch('deleteUser',this.user.id);
+            console.log(this.user.id)
+            document.getElementById(`deleteUserClose`+this.user.id).click();
         }
     }
 }

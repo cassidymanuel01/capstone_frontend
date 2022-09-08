@@ -153,12 +153,11 @@ export default createStore({
             context.commit('setToken', data.token)
             console.log(data.token);
             console.log(data.user)
-            // context.dispatch('getUserCart')
+            context.dispatch('getUserCart')
            }
           }
         });
       },
-
     async editBooking(context,payload){
       fetch('https://capstone-backend-api-1.herokuapp.com/bookings/'+ payload.id, {
           method:'PUT',
@@ -183,24 +182,27 @@ export default createStore({
     .then((data)=> context.dispatch('getBookings'));
 },
 
-  async deleteBooking(context,id){
+  async deleteBooking(context, id){
       fetch('https://capstone-backend-api-1.herokuapp.com/bookings/'+ id, {
           method:'DELETE'
       })
       .then((res)=> res.json())
-      .then((data)=> context.dispatch('getBookings'))
+      .then((data)=>{
+      context.dispatch('getBookings')
+    })
   },
 
   async getUserCart(context){
-    let fetched = await fetch('https://capstone-backend-api-1.herokuapp.com/users/' + context.state.user.id + '../components/AppointNav.vue');
+    let fetched = await fetch('https://capstone-backend-api-1.herokuapp.com/users/' + context.state.user[0].id + '/cart');
     let res = await fetched.json();
     context.commit('setUserCart', res.cart)
+    if (res.cart != null)
     context.dispatch('getTotalCart')
   },
 
   addCart(context, payload){
     const {prodName,prodDesc,prodPrice,prodImage,prodCategory} = payload
-    fetch('https://capstone-backend-api-1.herokuapp.com/users/' + context.state.user.id + '../components/AppointNav.vue', {
+    fetch('https://capstone-backend-api-1.herokuapp.com/users/' + context.state.user[0].id + '/cart', {
     method: 'POST',
     body: JSON.stringify({
         prodName: prodName,
@@ -218,20 +220,25 @@ export default createStore({
         if (data.results == 'There is no user with that id') {
           alert(data.results)
         } else {
-          alert('Item Added')
+          Swal.fire({
+            icon: 'success',
+            title: 'Appointment booked'
+          })
           context.dispatch('getUserCart')
         }
   })
 },
+
 getTotalCart(context){
   let total = 0;
   toRaw(context.state.cart).forEach(booking => {
-    total = total + booking.price
+    total = total + booking.prodPrice
   });
   context.commit('setTotal', total)
 },
+
 deleteCart(context){
-  fetch('https://capstone-backend-api-1.herokuapp.com/users/' + context.state.user.id + '../components/AppointNav.vue', {
+  fetch('https://capstone-backend-api-1.herokuapp.com/users/' + context.state.user[0].id + '/cart', {
   method: 'DELETE'
   })
   .then((res) => res.json())
@@ -239,8 +246,12 @@ deleteCart(context){
     if (data.result == 'There is no user with that ID') {
       alert(data.result)
     } else {
-      alert(
-        'The purchase of ' + context.state.user.userName + ' with a total of R' + Math.round((context.state.total + Number.EPSILON)*100)/100)
+      // alert(
+      //   'The purchase of ' + context.state.user[0].userName + ' with a total of R' + Math.round((context.state.total + Number.EPSILON)*100)/100)
+        Swal.fire({
+          icon: 'success',
+          title:` 'The purchase of ' + context.state.user[0].userName + ' with a total of R' + Math.round((context.state.total + Number.EPSILON)*100)/100)`
+        })
       context.dispatch('getUserCart')
     }
   })

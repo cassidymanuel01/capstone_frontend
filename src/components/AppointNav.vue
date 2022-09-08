@@ -2,7 +2,7 @@
     <div class="cart" v-if="user">
     <div class="offcanvas offcanvas-start offcanvas-show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-body" >
-    <p>{{user.userName}}'s Cart</p>
+    <p>{{user[0].userName}}'s Appointments</p>
     <div v-if="cart" id="cart">
       <div id="card" v-for="booking in cart" :key="booking" :booking="booking">
           <img :src="booking.prodImage" alt="Cart Item" class="img-fluid">
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div v-else>
-        <h3>No Items in Cart</h3>
+        <h3>You have not booked any appointments</h3>
     </div>
   </div>
   <div class="offcanvas-footer">

@@ -23,18 +23,12 @@
 <div class="calendar-container">
 
   <header>
-    
     <div class="day">9</div>
     <div class="month">September</div>
-
   </header>
-
   <table class="calendar">
-    
     <thead>
-
       <tr>
-
         <td>Mon</td>
         <td>Tue</td>
         <td>Wed</td>
@@ -46,9 +40,7 @@
       </tr>
 
     </thead>
-
     <tbody>
-
       <tr>
         <td class="prev-month">29</td>
         <td class="prev-month">30</td>
@@ -58,7 +50,6 @@
         <td>3</td>
         <td>4</td>
       </tr>
-
       <tr>
         <td>5</td>
         <td>6</td>
@@ -68,7 +59,6 @@
         <td>10</td>
         <td>11</td>
       </tr>
-
       <tr>
         <td>12</td>
         <td>13</td>
@@ -78,7 +68,6 @@
         <td>17</td>
         <td >18</td>
       </tr>
-
       <tr>
         <td>19</td>
         <td>20</td>
@@ -88,7 +77,6 @@
         <td>24</td>
         <td>25</td>
       </tr>
-
       <tr>
         <td>26</td>
         <td>27</td>
@@ -98,17 +86,12 @@
         <td>31</td>
         <td class="next-month">1</td>
       </tr>
-
     </tbody>
-
   </table>
-
   <div class="ring-left"></div>
   <div class="ring-right"></div>
-
-</div> 
-
-</div> 
+</div>
+</div>
         </div>
         <div class="modal-footer">
           <div class="row">
@@ -131,9 +114,6 @@
 <script>
 export default {
     props: ["id"],
-    mounted() {
-        this.$store.dispatch("getBooking", this.id);
-    },
     computed: {
         booking() {
             return this.$store.state.booking;
@@ -145,10 +125,11 @@ export default {
   methods: {
     addCart() {
       let booking = {
+        id: this.booking[0].id,
         prodName: this.booking[0].prodName,
         prodCategory: this.booking[0].prodCategory,
         prodDesc: this.booking[0].prodDesc,
-        prodmage: this.booking[0].prodmage,
+        prodImage: this.booking[0].prodImage,
         prodPrice: this.booking[0].prodPrice,
       };
       this.$store.dispatch("addCart", booking, this.user.id);
@@ -195,11 +176,12 @@ table {
 }
 
 td {
-	padding: 0;
+	padding: 10px;
 }
 
 .calendar-container {
 	position: relative;
+    
 }
 
 .calendar-container header {
@@ -207,16 +189,17 @@ td {
 	background: #c37935;
 	color: white;
 	padding: 3em 2em 3em 2em ;
+    
 }
 
 .day {
-	font-size: 8em;
-	font-weight: 900;
+    font-size: large;
+	font-weight: 400;
 	line-height: 1em;
 }
 
 .month {
-	font-size: 4em;
+    font-size: large;
 	line-height: 1em;
 	text-transform: lowercase;
 }
@@ -228,17 +211,18 @@ td {
 	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px white;
 	color: #c37935;
 	display: inline-block;
-	padding: 10px;
+	padding: 5px;
+    
 }
 
 .calendar thead {
 	color:#c37935;
-	font-weight: 700;
+	font-weight: 400;
 	text-transform: uppercase;
 }
 
 .calendar td {
-	padding: .5em 1em .5em 1em;
+    gap: 1px;
 	text-align: center;
 }
 
@@ -248,15 +232,23 @@ td {
 }
 
 .current-day {
-	color: #c37935;
+	background-color: #c37935;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.current-day:hover {
+	background-color: white;
+    color: #c37935;
 }
 
 .prev-month,
 .next-month {
-	color: white;
+	color: #c37935;
 }
 
-.ring-left,
+/* .ring-left,
 .ring-right {
 	position: absolute;
 	top: 230px;
@@ -278,6 +270,6 @@ td {
 	margin: 8px;
 	height: 32px;
 	width: 8px;
-}
+} */
 
 </style>

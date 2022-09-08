@@ -4,7 +4,7 @@
             <img src="https://i.ytimg.com/vi/cr3Bf53Lseo/maxresdefault.jpg" alt="logo"/>
             <div class="overlay">
                 <div class="container">
-                    <h2>contact us</h2>
+                    <h2 class="pt-3">contact us</h2>
                     <p class="h2-bottom">We value all our customers so just contact us.</p>
                     <div class="social">
                         <i class="fa fa-facebook"></i>
@@ -39,12 +39,15 @@ export default {
 .contact{
   background-color: #C37935;
   color: white;
-  height: 100vh;
+}
+
+.container{
+    height: 100%;
 }
 
 .video {
     min-width: 100%;
-    max-height: 720px;
+    min-height: 100%;
     overflow: hidden;    position: relative;
     text-align: center;
 
@@ -79,7 +82,7 @@ export default {
     height: 55px;
     border-radius: 50%;
     border: 1px solid white;
-    line-height: 35px;
+    line-height: 55px;
     font-size: 25px;
     transition: .5s ease;
     margin-right: 5px;

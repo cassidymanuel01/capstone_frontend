@@ -42,7 +42,7 @@
           prodImage:'',
           prodDesc:'',
           prodCategory:'',
-          prodPrice:'',
+          prodPrice:''
       }
      },
       computed:{

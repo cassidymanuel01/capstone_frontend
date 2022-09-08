@@ -8,7 +8,6 @@
           <th class="table__heading">User Name</th>
           <th class="table__heading">User Surname</th>
           <th class="table__heading">Email</th>
-          <th class="table__heading">Cart</th>
           <th class="table__heading">Edit User</th>
         </tr>
         <tbody v-if="users">
@@ -22,10 +21,6 @@
             </td>
             <td class="table__content" data-heading="Email">
               {{ user.userEmail }}
-            </td>
-            <td class="table__content" data-heading="Cart">
-              <button data-bs-toggle="modal" data-bs-target="#cart" class="btn">cart</button>
-              <CartModal :booking="booking" style="z-index: 1504;"/>
             </td>
             <td class="table__content" data-heading="Edit User">
               <button
@@ -111,10 +106,14 @@
 import EditBooking from '@/components/EditBookingModal.vue';
 import DeleteBooking from '@/components/DeleteBookingModal.vue';
 import AddBooking from '@/components/AddBooking.vue';
+import DeleteUser from '../components/DeleteUser.vue';
+import EditUser from '@/components/EditUser.vue';
+
+
 
 export default {
 
-  components: { EditBooking, DeleteBooking, AddBooking},
+  components: { EditBooking, DeleteBooking, AddBooking, DeleteUser, EditUser },
   mounted() {
     this.$store.dispatch("getBookings");
     this.$store.dispatch("getUsers");
