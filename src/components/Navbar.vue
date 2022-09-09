@@ -1,5 +1,5 @@
 <template>
-  <div id="NavHolder" class="fixed-top">
+  <div id="NavHolder" class="fixed-top row">
     <div id="Navbar" class="container">
       <div id="Navbar-left"
         type="button"
@@ -17,7 +17,7 @@
         <router-link to="/" id="Logo">Gliss Beauty</router-link>
       </div>
 
-      <div id="Navbar-right" class="fw-light gap-3">
+      <div id="Navbar-right" class="fw-light">
         <router-link
           to="/"
           id="loginlink"
@@ -75,17 +75,19 @@ export default {
 
 #Navbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  flex-wrap: nowrap;
   vertical-align: middle;
-  padding: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-#Navbar-left {
-  display: flex;
-  justify-content: start;
+@media (max-width: 450px){
+  #Navbar{display: block;
+    padding-top: 10px;
+    background-color: #C37935;
+  }
 }
-
 #Navbar-center {
   display: flex;
   justify-content: center;
@@ -94,7 +96,7 @@ export default {
 
 #Navbar-right {
   display: flex;
-  justify-content: end;
+  justify-content: space-evenly;
   text-decoration: none;
   color: white;
 }

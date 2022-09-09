@@ -122,8 +122,7 @@ export default {
 }
 
 
-.search-new {
-  background-color: #c37935;
+.search-new ::placeholder{
   color: white;
   font-weight: 900;
   border: 1px solid white;

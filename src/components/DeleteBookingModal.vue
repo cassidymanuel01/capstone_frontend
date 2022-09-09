@@ -9,7 +9,7 @@
                 <div class="modal-body">
                     <h3>Are you sure you want to delete this</h3>
                     <button data-bs-dismiss="modal" class="btn btn-primary">CANCEL</button>
-                    <button class="btn btn-danger" @click="deleteBooking">DELETE</button>
+                    <button class="btn btn-danger" @click="deleteBooking()">DELETE</button>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@ export default {
         deleteBooking(){
             this.$store.dispatch('deleteBooking',this.booking.id);
             console.log(this.booking.id)
-            document.getElementById(`deleteBookingClose`+this.booking.id).click();
+            document.getElementById(`deleteBookingClose`+this.booking.id);
         }
     }
 }

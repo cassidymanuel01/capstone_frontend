@@ -13,7 +13,7 @@
                         <i class="fa fa-linkedin"></i>
                         <i class="fa fa-pinterest"></i>
                     </div>
-                    <form>
+                    <form action="https://formspree.io/f/mjvzgpqe" method="POST">
                         <input type="text" name="name" placeholder=" your name">
                         <input type="email" name="email" placeholder="your email">
                         <input type="tel" name="phone" placeholder="your phone">
@@ -39,6 +39,7 @@ export default {
 .contact{
   background-color: #C37935;
   color: white;
+  min-height: 100vh;
 }
 
 .container{
@@ -78,14 +79,16 @@ export default {
     margin-top: 40px;
 }
 .video .overlay .social i {
-    width: 55px;
     height: 55px;
+    width: 55px;
+    line-height: 55px;
     border-radius: 50%;
     border: 1px solid white;
-    line-height: 55px;
     font-size: 25px;
     transition: .5s ease;
-    margin-right: 5px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    margin: 20px;
 }
 .video .overlay .social i:last-child {
     margin-right: 0;
@@ -98,12 +101,11 @@ export default {
 }
 
 
-@media(max-width:574px){
+@media(max-width:321px){
     .video .overlay .social i {
-    width: 45px;
+    width: 35px;
     height: 35px;
     border-radius: 50%;
-    line-height: 15px;
     font-size: 25px;
     transition: .5s ease;
     margin-right: 5px;
@@ -191,7 +193,6 @@ export default {
         height: 40px;
         font-size: 20px;
         line-height: 40px;
-        padding: 30px;
         bottom: 10%;
     }
     .video .overlay form {

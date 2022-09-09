@@ -23,19 +23,20 @@
 <div class="calendar-container">
 
   <header>
-    <div class="day">9</div>
-    <div class="month">September</div>
+    <h3>The only availble date for this month is the</h3>
+    <div class="day"><h3>15th of</h3></div>
+    <div class="month"><h3>September</h3></div>
   </header>
   <table class="calendar">
     <thead>
       <tr>
-        <td>Mon</td>
-        <td>Tue</td>
-        <td>Wed</td>
-        <td>Thu</td>
-        <td>Fri</td>
-        <td>Sat</td>
-        <td>Sun</td>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        <th>Sun</th>
 
       </tr>
 
@@ -55,7 +56,7 @@
         <td>6</td>
         <td>7</td>
         <td>8</td>
-        <td class="current-day">9</td>
+        <td >9</td>
         <td>10</td>
         <td>11</td>
       </tr>
@@ -63,7 +64,7 @@
         <td>12</td>
         <td>13</td>
         <td>14</td>
-        <td>15</td>
+        <td class="current-day">15</td>
         <td>16</td>
         <td>17</td>
         <td >18</td>
@@ -83,8 +84,8 @@
         <td>28</td>
         <td>29</td>
         <td>30</td>
-        <td>31</td>
         <td class="next-month">1</td>
+        <td class="next-month">2</td>
       </tr>
     </tbody>
   </table>
@@ -209,10 +210,8 @@ td {
 	border-radius: 0 0 1em 1em;
 	-webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px white;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, .2), 0 3px 1px white;
-	color: #c37935;
 	display: inline-block;
 	padding: 5px;
-    
 }
 
 .calendar thead {
@@ -224,28 +223,31 @@ td {
 .calendar td {
     gap: 1px;
 	text-align: center;
+    background-color: red;
+    color: white;
+    border: 2px solid white;
 }
-
+/* 
 .calendar tbody td:hover {
 	background: #c37935;
 	color: white;
-}
+} */
 
 .current-day {
-	background-color: #c37935;
-    color: white;
-    border: 1px solid white;
-    border-radius: 50%;
+	background-color: rgb(37, 194, 37) !important;
+    color: white !important;
+    border: 2px solid white !important;
 }
 
-.current-day:hover {
+/* .current-day:hover {
 	background-color: white;
     color: #c37935;
-}
+} */
 
 .prev-month,
 .next-month {
-	color: #c37935;
+	color: white;
+    border: 2px solid white;
 }
 
 /* .ring-left,

@@ -1,7 +1,7 @@
 <template>
   <div class="singleBooking pt-5">
     <div
-      class="container d-flex justify-content-center align-items-center flex-column pt-5"
+      class="container d-flex justify-content-center align-items-center flex-column pt-5 row"
     >
       <div class="booking-card" v-if="booking">
         <router-link to="/allBookings"
@@ -150,6 +150,27 @@ export default {
   z-index: 1;
 }
 
+
+
+@media(max-width:550px){
+    .btn-new{
+      left:3.3%;
+      border-radius: 0;
+    }
+}
+@media(max-width:400px){
+    .btn-new{
+      left:4%;
+      border-radius: 0;
+    }
+}
+@media(max-width:343px){
+    .btn-new{
+      left:4.6%;
+      border-radius: 0;
+    }
+}
+
 .btn-new:hover {
   background-color: white;
   color: #c37935;
@@ -210,137 +231,7 @@ export default {
   width: 130px;
 }
 
-@media (max-width: 424px) {
-  .booking-card {
-    width: 100%;
-  }
-  .booking-bottom-details div {
-    width: 85%;
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -30%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-}
 
-@media (max-width: 750px) {
-  .booking-card {
-    width: 100%;
-  }
-  .booking-bottom-details div {
-    width: 85%;
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -10%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-}
-
-/* @media (max-width: 768px) {
-  .col-md-4 {
-    width: 50%;
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -20%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-}
-
-@media (max-width: 690px) {
-  .col-md-4 {
-    width: 50%;
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -20%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-} */
-
-/* @media (max-width: 640px) {
-  .col-md-4 {
-    width: 50%;
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -40%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-} */
-
-@media (max-width: 720px) {
-  .col-md-4 {
-    width: 100%;
-    /* flex: 0 0 auto; */
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -10%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-}
-
-@media (max-width: 800px) {
-  .col-md-4 {
-    width: 100%;
-    /* flex: 0 0 auto; */
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -20%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-}
-
-@media (max-width: 850px) {
-  .col-md-4 {
-    width: 100%;
-    /* flex: 0 0 auto; */
-    display: flex;
-    justify-content: center;
-  }
-  .btn-new {
-    position: absolute;
-    left: -20%;
-    background-color: #c37935;
-    color: white;
-    z-index: 1;
-  }
-}
 
 .booking-price {
   font-size: 18px;
@@ -444,5 +335,10 @@ export default {
   background: #c37935;
   width: 0;
   animation: LoadingBar 2s linear infinite;
+}
+
+h4{
+  text-decoration: underline;
+  color: beige;
 }
 </style>
