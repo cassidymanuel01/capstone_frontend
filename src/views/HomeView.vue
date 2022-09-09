@@ -9,9 +9,9 @@
   <div class="about">
     <div class="container">
       <h2>About us</h2>
-      <p>Sooooooooooo basically Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem voluptatibus reiciendis accusamus facilis asperiores quae velit natus magni est id voluptatum necessitatibus quis ducimus, fugiat vel dolore! Dolor, quod ea temporibus, aut alias accusantium reprehenderit ducimus quis iste.</p>
+      <p>At Gliss we are a proud team of workers looking to satisfy and relax our customers. Origionally created in 2022 we started as a small home run business with a maximum of 3 customers a day. We had a meeting one day about looking to expend and thats when we decided to take a leap of faith and just rent out a space.</p>
       <br>
-        <p> officiis nesciunt nam asperiores tempora illum ipsa ipsum vel! Facilis adipisci itaque suscipit sapiente nulla. Sit dicta culpa doloribus impedit possimus quaerat porro error veritatis repellat eligendi voluptate eaque, optio, omnis magni odit reprehenderit architecto nostrum placeat odio iste accusantium. Velit mollitia quisquam dolore sit sint impedit voluptas quaerat accusamus? Totam nobis reprehenderit odit rerum vero, quisquam ullam? Unde corporis voluptatibus fugiat.</p>
+        <p>We eventually started to expand into a website and this proved to be very advantages as our customers had easier and better service they acess to all the information they needed and overall business ran much smoother... boom thats our about page.</p>
         <br>
     </div>
   </div>
